@@ -283,6 +283,11 @@ app.get("/admin/answers/refill/:id", SessionService.verifySessionMiddleware(role
       order: 3,
       answer: "Sunflowers",
     });
+    await db.answer.insert({
+      question_id: id,
+      order: 4,
+      answer: "None of the above",
+    });
 
     let order = 3;
     for (const active of actives) {

@@ -1215,6 +1215,9 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
           <div class="selectionOptions">
             <button data-val="${val.answer}" data-id="${val.id}" class="selectionBtns selectionBtn" >${val.answer}</button>
           </div>
+          <div class="selectionOptions">
+            <button class="selectionBtns selectionBtn" onclick="return handleNoneOfTheAbove();>None of the above</button>
+          </div>         
         `);
       }
     });
@@ -1222,7 +1225,7 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
     if (alreadyAnswered && alreadyAnswered.answer) {
       if (Array.isArray(alreadyAnswered.answer)) {
         alreadyAnswered.answer.forEach((answer) => {
-          if (!["Banana", "Olive", "Sunflowers"].includes(answer)) {
+          if (!["Banana", "Olive", "Sunflowers", "None of the above"].includes(answer)) {
             $(`#typeSelection button[data-val="${answer}"]`).trigger("click", [true]);
           }
         });
@@ -1230,7 +1233,7 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
     } else if (currenQuesAnswerObj && currenQuesAnswerObj.answer && !alreadyAnswered) {
       if (Array.isArray(currenQuesAnswerObj.answer)) {
         currenQuesAnswerObj.answer.forEach((answer) => {
-          if (!["Banana", "Olive", "Sunflowers"].includes(answer)) {
+          if (!["Banana", "Olive", "Sunflowers", "None of the above"].includes(answer)) {
             $(`#typeSelection button[data-val="${answer}"]`).trigger("click", [true]);
           }
         });

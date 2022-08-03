@@ -282,6 +282,7 @@
                           <option value="Banana">
                           <option value="Olive">
                           <option value="Sunflowers">
+                          <option value="None of the above">
                             <% it.actives.forEach((active) => { %>
                           <option value="<%= active.name %>">
                             <% }) %>
@@ -428,6 +429,7 @@
               <option value="Banana">
               <option value="Olive">
               <option value="Sunflowers">
+              <option value="None of the above">
                 <% it.actives.forEach((active) => { %>
               <option value="<%= active.name %>">
                 <% }) %>
