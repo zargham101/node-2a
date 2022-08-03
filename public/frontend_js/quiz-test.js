@@ -1227,6 +1227,10 @@ async function askQuestion(totalQuizQuestions, counter, fromBack) {
         alreadyAnswered.answer.forEach((answer) => {
           if (!["Banana", "Olive", "Sunflowers", "None of the above"].includes(answer)) {
             $(`#typeSelection button[data-val="${answer}"]`).trigger("click", [true]);
+          } else if (["Banana", "Olive", "Sunflowers"].includes(answer)) {
+            setTimeout(function () {
+              window.location.href = 'localhost:3001/quiz-test.html';
+            }, 5000);
           }
         });
       }
